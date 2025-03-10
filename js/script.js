@@ -27,10 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function drawStreamGraph(data) {
+
+        const crimeTypes = ["ARSON", "ASSAULT", "BATTERY", "BURGLARY", "HOMICIDE", "NARCOTICS", "OTHER", "ROBBERY", "THEFT", "TRESPASSING", "VANDALISM", "VEHICLE_THEFT"]; // Explicitly define your crime types here
+
         const series = d3.stack()
             .offset(d3.stackOffsetWiggle)
             .order(d3.stackOrderInsideOut)
-            .keys(d3.union(data.map(d => d['Primary Type']))) // Unique crime types
+            .keys(crimeTypes) 
+            // .keys(d3.union(data.map(d => d['Primary Type']))) // Unique crime types
             .value(([, D], key) => D.get(key)?.count || 0)
             (d3.index(data, d => d.date, d => d['Primary Type']));
 

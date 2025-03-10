@@ -3,6 +3,7 @@ import pandas as pd
 # Load the dataset
 df = pd.read_csv("A2\data\Chicago Crimes 2014-2024.csv")
 
+
 # Convert 'Date' to datetime format
 df['Date'] = pd.to_datetime(df['Date'])
 
