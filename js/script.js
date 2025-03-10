@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () { 
     const margin = { top: 60, right: 10, bottom: 30, left: 60 }; // Increased left margin
     const width = 1000 - margin.left - margin.right; // Adjust width for the graph
-    const height = 750 - margin.top - margin.bottom;
+    const height = 800 - margin.top - margin.bottom;
 
     // Create the SVG container
     const svg = d3.select("#vis")
@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const crimeTypes = ["ARSON", "ASSAULT", "BATTERY", "BURGLARY", "HOMICIDE", "NARCOTICS", "OTHER", "ROBBERY", "THEFT", "TRESPASSING", "VANDALISM", "VEHICLE_THEFT"]; // Explicitly define your crime types here
 
         const series = d3.stack()
-            .offset(d3.stackOffsetWiggle)
+            .offset(d3.stackOffsetNone) // stacked area chart
+            // .offset(d3.stackOffsetWiggle) // stream graph
             .order(d3.stackOrderInsideOut)
             .keys(crimeTypes) 
             // .keys(d3.union(data.map(d => d['Primary Type']))) // Unique crime types
