@@ -18,14 +18,36 @@
 }
 
 
-.tooltip {
+#tooltip {
     position: absolute;
-    visibility: hidden;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    background-color: whitesmoke;
+    color: black;
+    font-weight: bold;
     padding: 5px;
     border-radius: 5px;
     pointer-events: none;
     font-size: 12px;
+}
+
+#tickmarks {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: -10px;
+  }
+  
+  #tickmarks option {
+   
+    width: 100vw;
+    height: 20px;
+    background: transparent;
+    color: black;
+    font-size: 12px;
+  }
+
+
+
+#yearSlider{
+    width: 95%;
 }
     

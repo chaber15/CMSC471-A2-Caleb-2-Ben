@@ -1,23 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment Two: Crime in Chicago</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <div class="container"> 
-        <h1 style="text-align: center;">Assignment Two: Crime in Chicago</h1>
-        <div class="controls">
-        </div>
-        <div id="tooltip" style="display:none"></div> 
-        <div id="vis"></div> <!-- Will hold our visualization (SVG) -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="text-align: left">Assignment Two: Crime in Chicago</h1>
+      <hr />
+      <br />
+
+      <h2>1. Introduction</h2>
+      <hr />
+      <p>
+        We used the Chicago Crimes, 2001–present dataset, which contains every reported crime which occurred in the city of Chicago from 2001 to today. The raw data is scrapped from Chicago Police Department’s CLEAR (Citizen Law Enforcement Analysis and Reporting) system. Because there were over 8 million crimes in the CSV file, processing and graphing all that data was simply not realistic, instead we chose to take data from the last 10 years (Jan 1st, 2014 - Dec 31st, 2024). We then further limited the data to Arson, Assault, Battery, Burglary, Homicide, Narcotics, Other, Robbery, Theft, Trespassing, Vandalism, and Vehicle Theft, because those were the most common crimes committed and because that was the maximum amount of data that could be displayed on the graph while still being readable.     
+
+      </p>
+
+      <div class="controls">
+        <h1>Crime in Chicago for the Year <span id="yearLabel">2024</span></h1>
+
+        <input type="range" id="yearSlider" min="2014" max="2024" value="2024" step="1" list="tickmarks" oninput="updateYear(this.value, false)">
+        <datalist id="tickmarks">
+            <option value="2014" label="2014"></option>
+            <option value="2015" label="2015"></option>
+            <option value="2016" label="2016"></option>
+            <option value="2017" label="2017"></option>
+            <option value="2018" label="2018"></option>
+            <option value="2019" label="2019"></option>
+            <option value="2020" label="2020"></option>
+            <option value="2021" label="2021"></option>
+            <option value="2022" label="2022"></option>
+            <option value="2023" label="2023"></option>
+            <option value="2024" label="2024"></option>
+        </datalist>
+        <input type="checkbox" id="toggleYearsCheckbox" onclick="toggleAllYears()">
+        View All Years
+      </div>
+      
+      <div id="tooltip"></div>      
+      <div id="vis"></div>
+      <!-- Will hold our visualization (SVG) -->
+
+      <h2>2. Rationale Behind Design Decisions</h2>
+      <hr />
+      <p>
+        Rationale for your design decisions. List your implemented interactions.
+        Explain: How did you choose your particular visual encodings and
+        interaction techniques? What alternatives did you consider and how did
+        you arrive at your ultimate choices?
+      </p>
+
+      <h2>3. Development Process</h2>
+      <p><em> Overview of our development process. Describe how the work was split
+        among the team members. Include a commentary on the development process,
+        including answers to the following questions: Roughly how much time did
+        you spend developing your application (in people-hours)? </em></p>
+      <hr />
+      <p>
+        <ul>
+            <li>
+                <strong>
+                    Roughly how much time did you spend developing your application (in people-hours)?
+                </strong>
+            </li>
+            <li>
+                <strong>
+                    What aspects took the most time?
+                </strong>
+            </li>
+        </ul>
+      </p>
+      <p>
+        An overview of your development process. Describe how the work was split
+        among the team members. Include a commentary on the development process,
+        including answers to the following questions: Roughly how much time did
+        you spend developing your application (in people-hours)? What aspects
+        took the most time?
+      </p>
+
+      <h2>4. Document of AI Usage</h2>
+      <p><em></em></p>
+      <hr />
+      <p>
+       
+      </p>
+
+      <h2>5. Sources</h2>
+      <hr />
+      <ul>
+        <li>City of Chicago. (n.d.). <em>Crimes - 2001 to present dashboard</em>. City of
+            Chicago Data Portal. Retrieved March 9, 2025, from
+            <a href="https://data.cityofchicago.org/stories/s/Crimes-2001-to-present-Dashboard/5cd6-ry5g">https://data.cityofchicago.org/stories/s/Crimes-2001-to-present-Dashboard/5cd6-ry5g</a></li>
+        <li>
+            Bostock, M. (2023). Streamgraph. Observable. Retrieved March 9, 2025,
+        from <a href="https://observablehq.com/@d3/streamgraph/2">https://observablehq.com/@d3/streamgraph/2</a> 
+        </li>
+        <li>
+            Yang, F. (2025). <em>CMSC471 Lab 4 & 5 handout</em>. Retrieved March 9, 2025, from
+            <a href="https://fumeng-yang.github.io/CMSC471/handouts/lab45-handout.html">https://fumeng-yang.github.io/CMSC471/handouts/lab45-handout.html</a>
+        </li>
+      </ul>
+        
+       
+         
+        
+        
+      </p>
     </div>
 
     <!-- Load D3.js -->
     <script src="https://d3js.org/d3.v7.js"></script>
     <script src="https://unpkg.com/d3-simple-slider"></script>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
