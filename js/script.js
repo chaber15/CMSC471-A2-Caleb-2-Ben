@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const color = d3
       .scaleOrdinal()
       .domain(series.map((d) => d.key))
-      .range(d3.schemeSet2);
+      .range(d3.schemeSet3);
 
     // Area generator
     const area = d3

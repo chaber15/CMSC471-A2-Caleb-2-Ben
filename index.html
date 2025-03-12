@@ -14,10 +14,12 @@
 
       <h2>1. Introduction</h2>
       <hr />
+      <br>
       <p>
-        We used the Chicago Crimes, 2001–present dataset, which contains every reported crime which occurred in the city of Chicago from 2001 to today. The raw data is scrapped from Chicago Police Department’s CLEAR (Citizen Law Enforcement Analysis and Reporting) system. Because there were over 8 million crimes in the CSV file, processing and graphing all that data was simply not realistic, instead we chose to take data from the last 10 years (Jan 1st, 2014 - Dec 31st, 2024). We then further limited the data to Arson, Assault, Battery, Burglary, Homicide, Narcotics, Other, Robbery, Theft, Trespassing, Vandalism, and Vehicle Theft, because those were the most common crimes committed and because that was the maximum amount of data that could be displayed on the graph while still being readable.     
+        We used the Chicago Crimes, 2001–present dataset, which contains every reported crime in Chicago from 2001 to the present. The raw data was scraped from the Chicago Police Department’s CLEAR (Citizen Law Enforcement Analysis and Reporting) system. Because the CSV file contained over 8 million crimes, processing and graphing all that data was unrealistic and overwhelming for potential viewers. We chose to take data from the last 10 years (Jan 1st, 2014 - Dec 31st, 2024). and limit the crime types we wanted to observe to Arson, Assault, Battery, Burglary, Homicide, Narcotics, Other, Robbery, Theft, Trespassing, Vandalism, and Vehicle Theft because those were the most common crimes committed because that was the maximum amount of data that could be displayed on the graph while still being readable.     
 
       </p>
+      <br>
 
       <div class="controls">
         <h1>Crime in Chicago for the Year <span id="yearLabel">2024</span></h1>
@@ -46,50 +48,32 @@
 
       <h2>2. Rationale Behind Design Decisions</h2>
       <hr />
+      <br>
       <p>
-        Rationale for your design decisions. List your implemented interactions.
-        Explain: How did you choose your particular visual encodings and
-        interaction techniques? What alternatives did you consider and how did
-        you arrive at your ultimate choices?
+        We initially considered using a line graph for our visualization since it effectively displays changes over time. We also explored using a bar chart to represent the frequency of each crime. Ultimately, we chose a streamgraph because it combined the strengths of both a line graph and a bar chart while offering a visually distinct presentation. Another option we considered was a pannable chart, which allows users to scroll through time. However, it lacked the ability to highlight patterns or select specific time ranges. We still wanted the users to view trends by year, so we added the ability to filter the data by year with a scrollbar and the option to view the entire dataset using a checkbox (2014 - 2024). Even without a subset of chosen crimes, displaying them all at once made it harder to distinguish. We added the option to filter out specific crime types, as this would allow users to compare the trends of the specific crimes they want to view. The color encodings were not specific to each crime type and were more so to allow differentiation between each crime on the streamgraph. Finally, we added tooltips to display the recorded counts of each crime per month, which we felt was necessary, as the streamgraph can make it difficult to determine these values at an initial glance. In short, the simplification of data for the user was key here.
       </p>
+      <br>
 
       <h2>3. Development Process</h2>
-      <p><em> Overview of our development process. Describe how the work was split
-        among the team members. Include a commentary on the development process,
-        including answers to the following questions: Roughly how much time did
-        you spend developing your application (in people-hours)? </em></p>
       <hr />
+      <br>
       <p>
-        <ul>
-            <li>
-                <strong>
-                    Roughly how much time did you spend developing your application (in people-hours)?
-                </strong>
-            </li>
-            <li>
-                <strong>
-                    What aspects took the most time?
-                </strong>
-            </li>
-        </ul>
+        The work was split with one person doing the majority of the code for the streamgraph visualization and another student adding additional features to enhance the visualization (tooltips and filtering). Lastly, the third student worked on the write-up for the assignment. All the students provided their opinions and input on the visualization we wanted to use and the best way to visualize the dataset we chose, and each member reviewed each other’s work to check for errors and provide feedback. It took our primary coder about four hours to create the graph, process the data (filtering out unwanted crimes, counting crimes per month), and get the legend to function correctly – the legend took the most time. To add additional features like the year filtering, the ability to view all the years, and the tooltips, it took our other coder about three and a half hours. The tooltips took most of that time due to trouble figuring out how to get the current month and crime count per crime.
       </p>
-      <p>
-        An overview of your development process. Describe how the work was split
-        among the team members. Include a commentary on the development process,
-        including answers to the following questions: Roughly how much time did
-        you spend developing your application (in people-hours)? What aspects
-        took the most time?
-      </p>
+      <br>
+     
 
       <h2>4. Document of AI Usage</h2>
-      <p><em></em></p>
       <hr />
+      <br>
       <p>
-       
+        AI was used during the creation of this project. We used AI to help adapt the structure of labs 4&5 to the new example code of a streamgraph. ChatGPT also helped us write the Python code to process the crime data, and it was used to create the legend and the code that allows users to filter based on the crime they want to display.     
       </p>
+      <br>
 
       <h2>5. Sources</h2>
       <hr />
+      <br>
       <ul>
         <li>City of Chicago. (n.d.). <em>Crimes - 2001 to present dashboard</em>. City of
             Chicago Data Portal. Retrieved March 9, 2025, from
